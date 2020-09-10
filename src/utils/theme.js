@@ -1,0 +1,14 @@
+export const theme = {
+  colors: {
+    light: "#127A4F",
+    clear: "#DDD8C4",
+    text: "#EFEFEF",
+    dark: "#090C08",
+    link: "#00A8E8",
+    linkDark: "#007EA7",
+  },
+  media: {
+    desktop: "@media (min-width: 1000px)",
+    mobile: "@media (max-width: 1000px)",
+  },
+}

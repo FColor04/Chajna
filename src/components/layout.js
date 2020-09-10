@@ -1,51 +1,59 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
 import React from "react"
-import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
+
+import styled from "styled-components"
+
+import { createGlobalStyle, ThemeProvider } from "styled-components"
+import { theme } from "../utils/theme"
 
 import Header from "./header"
-import "./layout.css"
+import Footer from "./footer"
 
-const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
+const GlobalStyle = createGlobalStyle`
 
-  return (
-    <>
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
-      </div>
-    </>
-  )
-}
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto&display=swap');
 
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-}
+  html {
+    font-size: 24px;
+  }
+  body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background: ${({ theme }) => theme.colors.clear};
+  }
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  h1,h2,h3,h4,h5,h6 {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  .fixedImage {
+    max-width: 400px;
+    max-height: 400px;
+  }
+`
+
+const StyledWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+`
+
+const Content = styled.div`
+  flex-grow: 1;
+`
+
+const Layout = ({ children }) => (
+  <ThemeProvider theme={theme}>
+    <StyledWrapper>
+      <GlobalStyle />
+      <Header />
+      <Content>{children}</Content>
+      <Footer />
+    </StyledWrapper>
+  </ThemeProvider>
+)
 
 export default Layout
