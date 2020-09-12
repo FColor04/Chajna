@@ -2,16 +2,14 @@ import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
 
-const StyledHeader = styled.div`
+const StyledNavbar = styled.div`
   background: ${({ theme }) => theme.colors.light};
   height: 100px;
-  width: 35vw;
-  position: fixed;
+  width: 100%;
   z-index: 2;
-  right: 10vw;
-  top: 0;
-
   display: flex;
+  overflow: hidden;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4);
 `
 
 const StyledButton = styled(Link)`
@@ -28,15 +26,18 @@ const StyledButton = styled(Link)`
   transform: translateY(0);
   transition: transform 0.2s;
   flex-grow: 1;
+  text-shadow: rgba(0, 0, 0, 0.4) 2px 2px 2px;
   &:hover {
     transform: translateY(-10%);
+    text-decoration: none;
+    color: ${({ theme }) => theme.colors.text};
   }
   &::before {
     content: "";
     position: absolute;
     bottom: 30%;
-    width: 68%;
-    border-bottom: 4px #efefef solid;
+    width: 40%;
+    border-bottom: 4px ${({ theme }) => theme.colors.highlight} solid;
     transform: scaleX(0);
     transition: transform 0.4s;
   }
@@ -45,14 +46,21 @@ const StyledButton = styled(Link)`
   }
 `
 
-const Header = () => (
-  <nav>
-    <StyledHeader>
+const Navbar = () => (
+  <nav
+    style={{
+      position: "sticky",
+      top: "0",
+      zIndex: "5",
+    }}
+  >
+    <StyledNavbar>
       <StyledButton to="/">Strona Główna</StyledButton>
       <StyledButton to="/">Nasze psy</StyledButton>
+      <StyledButton to="/">Galeria</StyledButton>
       <StyledButton to="/">Kontakt</StyledButton>
-    </StyledHeader>
+    </StyledNavbar>
   </nav>
 )
 
-export default Header
+export default Navbar
