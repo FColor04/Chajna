@@ -6,19 +6,18 @@ import StyledContent from "../components/content"
 import StyledParagraph from "../components/paragraph"
 import StyledRow from "../components/row"
 
-const NotFoundPage = () => (
-  <Layout>
-    <SEO title="404: Not found" />
+const Gallery = () => (
+    <Layout>
+    <SEO title="Galeria" />
     <Navbar />
     <StyledContent>
-      <StyledRow>
-        <StyledParagraph>
-          <h1>:( Błąd 404</h1>
-          <p>Strona lub element który szukasz, nie istnieje</p>
-        </StyledParagraph>
-      </StyledRow>
+        <StyledRow>
+            <StyledParagraph>
+                <h1 className="underlined">Galeria</h1>
+            </StyledParagraph>
+        </StyledRow>
     </StyledContent>
-  </Layout>
+    </Layout>
 )
 
-export default NotFoundPage
+export default Gallery

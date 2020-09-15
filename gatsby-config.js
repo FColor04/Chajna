@@ -21,8 +21,8 @@ module.exports = {
         name: `FCI Chajna`,
         short_name: `Chajna`,
         start_url: `/`,
-        background_color: `#334488`,
-        theme_color: `#334488`,
+        background_color: `#574b2e`,
+        theme_color: `#574b2e`,
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },

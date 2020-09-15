@@ -5,7 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import { createGlobalStyle, ThemeProvider } from "styled-components"
 import { theme } from "../utils/theme"
 import Footer from "./footer"
-
+import { Helmet } from 'react-helmet'
 const GlobalStyle = createGlobalStyle`
 
   @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto&display=swap');
@@ -32,7 +32,8 @@ const GlobalStyle = createGlobalStyle`
   h1,h2,h3,h4,h5,h6 {
     font-family: 'Montserrat', sans-serif;
     margin: 0;
-    padding: 0 20px;
+    padding: 0 10px;
+    font-weight: 700;
     display: inline-block;
   }
   .slide {
@@ -45,19 +46,16 @@ const GlobalStyle = createGlobalStyle`
     z-index: 1;
   }
   .heroImage {
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 100%;
     position: absolute;
   }
   .inlineImage {
-    min-width: 200px;
-    min-height: 200px;
-    width: 30vw;
-    height: 30vw;
-    max-width: 420px;
-    max-height: 420px;
+    min-width: 150px;
+    min-height: 150px;
+    width: 35vw;
+    height: 35vw;
+    max-width: 520px;
+    max-height: 520px;
+    border-radius: 50%;
   }
   .floatLeft {
     float: left;
@@ -79,7 +77,13 @@ const GlobalStyle = createGlobalStyle`
     border-bottom: 4px ${({ theme }) => theme.colors.dark} solid;
     margin-bottom: 1rem;
   }
-
+  .fas {
+    margin: 15px;
+    font-size: 1.3rem;
+  }
+  .textAlignRight {
+    text-align: right;
+  }
 `
 
 const StyledWrapper = styled.div`
@@ -93,13 +97,18 @@ const Content = styled.div`
 `
 
 const Layout = ({ children }) => (
-  <ThemeProvider theme={theme}>
-    <StyledWrapper>
-      <GlobalStyle />
-      <Content>{children}</Content>
-      <Footer />
-    </StyledWrapper>
-  </ThemeProvider>
+  <>
+    <Helmet>
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous"></link>
+    </Helmet>
+    <ThemeProvider theme={theme}>
+      <StyledWrapper>
+        <GlobalStyle />
+        <Content>{children}</Content>
+        <Footer />
+      </StyledWrapper>
+    </ThemeProvider>
+  </>
 )
 
 export default Layout

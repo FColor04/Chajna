@@ -4,9 +4,8 @@ import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 
 const StyledHero = styled.div`
-  width: 100%;
-  height: calc(100vh - 100px);
   background: ${({ theme }) => theme.colors.dark};
+  max-height: calc(100vh - 100px);
   position: relative;
   overflow: hidden;
 `
@@ -22,7 +21,7 @@ const StyledH1 = styled.h1`
 const Hero = () => {
   const data = useStaticQuery(graphql`
     query {
-      hero: file(relativePath: { eq: "heropies2.png" }) {
+      hero: file(relativePath: { eq: "heropies.png" }) {
         childImageSharp {
           fluid(maxWidth: 1920) {
             ...GatsbyImageSharpFluid_noBase64
@@ -35,7 +34,7 @@ const Hero = () => {
   return (
     <StyledHero>
       <Img className="heroImage" fluid={data.hero.childImageSharp.fluid} />
-      <StyledH1>FCI Chajna</StyledH1>
+      <StyledH1></StyledH1>
     </StyledHero>
   )
 }

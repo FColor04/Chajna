@@ -5,7 +5,7 @@ export const theme = {
     accept: "#127A4F",
     clear: "#DDD8C4",
     text: "#EFEFEF",
-    dark: "#090C08",
+    dark: "#202224",
     link: "#00A8E8",
     linkDark: "#007EA7",
   },

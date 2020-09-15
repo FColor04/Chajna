@@ -21,7 +21,7 @@ const StyledButton = styled(Link)`
   text-align: center;
   text-decoration: none;
   color: ${({ theme }) => theme.colors.text};
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   position: relative;
   transform: translateY(0);
   transition: transform 0.2s;
@@ -56,9 +56,8 @@ const Navbar = () => (
   >
     <StyledNavbar>
       <StyledButton to="/">Strona Główna</StyledButton>
-      <StyledButton to="/">Nasze psy</StyledButton>
-      <StyledButton to="/">Galeria</StyledButton>
-      <StyledButton to="/">Kontakt</StyledButton>
+      <StyledButton to="/gallery">Galeria</StyledButton>
+      <StyledButton to="/contact">Kontakt</StyledButton>
     </StyledNavbar>
   </nav>
 )

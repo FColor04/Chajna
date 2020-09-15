@@ -5,7 +5,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import { Carousel } from "react-bootstrap"
 const StyledCarousel = styled.div`
   width: 90%;
-  height: 35vw;
+  height: 37vw;
   margin: 0 auto;
   background: #454545;
   display: flex;
