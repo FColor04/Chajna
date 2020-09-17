@@ -55,7 +55,7 @@ const Navbar = () => (
     }}
   >
     <StyledNavbar>
-      <StyledButton to="/">Strona Główna</StyledButton>
+      <StyledButton rel="canonical" to="/">Strona Główna</StyledButton>
       <StyledButton to="/gallery">Galeria</StyledButton>
       <StyledButton to="/contact">Kontakt</StyledButton>
     </StyledNavbar>

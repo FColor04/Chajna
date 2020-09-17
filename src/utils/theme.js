@@ -6,7 +6,7 @@ export const theme = {
     clear: "#DDD8C4",
     text: "#EFEFEF",
     dark: "#202224",
-    litdark: "#4f565c",
+    litdark: "#6f96bc",
     link: "#00A8E8",
     linkDark: "#007EA7",
   },

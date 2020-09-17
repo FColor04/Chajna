@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `FCI Chajna`,
-    description: `Oficjalna strona hodowli psów Chajna`,
+    description: `Oficjalna strona hodowli psów`,
     author: `@FColor04`,
   },
   plugins: [

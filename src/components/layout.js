@@ -4,7 +4,6 @@ import styled from "styled-components"
 import "bootstrap/dist/css/bootstrap.min.css"
 import { createGlobalStyle, ThemeProvider } from "styled-components"
 import { theme } from "../utils/theme"
-import Footer from "./footer"
 import { Helmet } from 'react-helmet'
 const GlobalStyle = createGlobalStyle`
 
