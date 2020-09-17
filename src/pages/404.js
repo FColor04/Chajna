@@ -5,6 +5,7 @@ import Navbar from "../components/navbar"
 import StyledContent from "../components/content"
 import StyledParagraph from "../components/paragraph"
 import StyledRow from "../components/row"
+import Footer from "../components/footer"
 
 const NotFoundPage = () => (
   <Layout>
@@ -18,6 +19,7 @@ const NotFoundPage = () => (
         </StyledParagraph>
       </StyledRow>
     </StyledContent>
+    <Footer />
   </Layout>
 )
 

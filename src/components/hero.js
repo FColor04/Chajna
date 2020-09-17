@@ -21,7 +21,7 @@ const StyledH1 = styled.h1`
 const Hero = () => {
   const data = useStaticQuery(graphql`
     query {
-      hero: file(relativePath: { eq: "heropies.png" }) {
+      hero: file(relativePath: { eq: "heropies.jpg" }) {
         childImageSharp {
           fluid(maxWidth: 1920) {
             ...GatsbyImageSharpFluid_noBase64

@@ -5,8 +5,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import { Carousel } from "react-bootstrap"
 const StyledCarousel = styled.div`
   width: 90%;
-  height: 37vw;
-  margin: 0 auto;
+  height: 33vw;
   background: #454545;
   display: flex;
   flex-direction: column;
@@ -14,34 +13,27 @@ const StyledCarousel = styled.div`
   align-items: center;
 `
 const StyledCarouselItem = styled.div`
-  height: 700px;
+  height: 33vw;
   width: 100%;
 `
-const DogCarousel = () => {
+const DogCarousel = (props) => {
   const data = useStaticQuery(graphql`
     query {
-      slide1: file(relativePath: { eq: "pies1.jpg" }) {
+      slide1: file(relativePath: { eq: "pies3.jpg" }) {
         childImageSharp {
           fluid(maxWidth: 1600) {
             ...GatsbyImageSharpFluid_noBase64
           }
         }
       }
-      slide2: file(relativePath: { eq: "pies2.jpg" }) {
+      slide2: file(relativePath: { eq: "pies6.jpg" }) {
         childImageSharp {
           fluid(maxWidth: 1600) {
             ...GatsbyImageSharpFluid_noBase64
           }
         }
       }
-      slide3: file(relativePath: { eq: "pies4.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 1600) {
-            ...GatsbyImageSharpFluid_noBase64
-          }
-        }
-      }
-      slide4: file(relativePath: { eq: "pies5.jpg" }) {
+      slide3: file(relativePath: { eq: "sesja1.jpg" }) {
         childImageSharp {
           fluid(maxWidth: 1600) {
             ...GatsbyImageSharpFluid_noBase64
@@ -62,22 +54,13 @@ const DogCarousel = () => {
       <Carousel.Item as={StyledCarouselItem}>
         <Img
           className="slide"
-          fadeIn
           fluid={data.slide2.childImageSharp.fluid}
         />
       </Carousel.Item>
       <Carousel.Item as={StyledCarouselItem}>
         <Img
           className="slide"
-          fadeIn
           fluid={data.slide3.childImageSharp.fluid}
-        />
-      </Carousel.Item>
-      <Carousel.Item as={StyledCarouselItem}>
-        <Img
-          className="slide"
-          fadeIn
-          fluid={data.slide4.childImageSharp.fluid}
         />
       </Carousel.Item>
     </Carousel>

@@ -1,11 +1,12 @@
 export const theme = {
   colors: {
-    light: "#574b2e",
+    light: "#52432c",
     highlight: "#b09b68",
     accept: "#127A4F",
     clear: "#DDD8C4",
     text: "#EFEFEF",
     dark: "#202224",
+    litdark: "#4f565c",
     link: "#00A8E8",
     linkDark: "#007EA7",
   },

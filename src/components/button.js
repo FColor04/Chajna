@@ -9,7 +9,7 @@ const StyledLink = styled(Link)`
     text-decoration: none;
     position: relative;
     z-index: 1;
-    margin: 50px 0;
+    margin: ${props => props.nomargin ? '0px' : '50px'} 0;
     padding: 8px;
     border: 2px ${({ theme }) => theme.colors.dark} solid;
     &::after {
@@ -33,7 +33,7 @@ const StyledLink = styled(Link)`
     }
 `
 const Button = (props) => (
-<StyledLink to={props.to}>
+<StyledLink to={props.to} {...props}>
     {props.children}
 </StyledLink>
 )

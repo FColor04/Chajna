@@ -8,7 +8,7 @@ import Footer from "./footer"
 import { Helmet } from 'react-helmet'
 const GlobalStyle = createGlobalStyle`
 
-  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap');
 
   html {
     font-size: 26px;
@@ -22,15 +22,18 @@ const GlobalStyle = createGlobalStyle`
   body {
     padding: 0;
     margin: 0;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Merriweather', serif;
     background: ${({ theme }) => theme.colors.clear};
     color: ${({ theme }) => theme.colors.dark};
+  }
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
   *, *::before, *::after {
     box-sizing: border-box;
   }
   h1,h2,h3,h4,h5,h6 {
-    font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 0 10px;
     font-weight: 700;
@@ -73,9 +76,27 @@ const GlobalStyle = createGlobalStyle`
       clear: both;
     }
   }
+  .__paws {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    color: white;
+    z-index: -1;
+    opacity: 0.4;
+  }
+  .rowGalleryImage {
+    flex-grow: 1;
+  }
+  
+
   .underlined {
     border-bottom: 4px ${({ theme }) => theme.colors.dark} solid;
     margin-bottom: 1rem;
+  }
+  .centered {
+    width: 100%;
+    text-align: center;
   }
   .fas {
     margin: 15px;
@@ -83,6 +104,15 @@ const GlobalStyle = createGlobalStyle`
   }
   .textAlignRight {
     text-align: right;
+  }
+  .indented {
+    text-indent: 20px;
+  }
+  .maxHeight {
+    height: calc(100vh - 100px);
+  }
+  .reversed {
+    transform: rotateY(180deg);
   }
 `
 
@@ -105,7 +135,6 @@ const Layout = ({ children }) => (
       <StyledWrapper>
         <GlobalStyle />
         <Content>{children}</Content>
-        <Footer />
       </StyledWrapper>
     </ThemeProvider>
   </>

@@ -7,13 +7,21 @@ const StyledFooter = styled.div`
   padding: 50px 0px;
   font-size: 0.8rem;
   text-align: center;
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: ${props => props.maxHeight ? 'calc(100vh - 100px)' : '250px'};
+  position: ${props => props.fixed ? 'fixed' : 'relative'};
+  bottom: 0;
+  left: 0;
+  right: 0;
 `
 
 const StyledContactBox = styled.div`
   width: 80vw;
-  margin: 0 auto;
+  margin: 15px auto;
   min-height: 50px;
+  font-size: 1.2rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -28,27 +36,31 @@ const ContactBoxItem = styled.div`
   justify-content: center;
 `
 
-const Footer = () => (
-  <footer>
-    <StyledFooter>
+const Copyright = styled.span`
+  font-size: 0.7rem;
+  color: ${({ theme }) => theme.colors.litdark};
+`
+
+const Footer = (props) => (
+  <StyledFooter {...props}>
+    <footer>
       <StyledContactBox>
         <ContactBoxItem>
           <i className="fas fa-envelope"></i>
-          xyz@abc.com
+          aisha99@o2.pl
         </ContactBoxItem>
         <ContactBoxItem>
           <i className="fas fa-map-marker-alt"></i> 
-          Sajatin (FCI) PORSCHE<br />
-          Chajna (FCI) BETSY
+          Woj. Śląskie, Rybnik
         </ContactBoxItem>
         <ContactBoxItem>
           <i className="fas fa-phone-square-alt"></i> 
           (+48) 728 851 465
         </ContactBoxItem>
       </StyledContactBox>
-      Made by Marcin Smoła © FCI Chajna 2020
-    </StyledFooter>
-  </footer>
+      <Copyright>Made by Marcin Smoła © FCI Chajna 2020</Copyright>
+    </footer>
+  </StyledFooter>
 )
 
 export default Footer
