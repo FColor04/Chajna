@@ -7,13 +7,36 @@ workflows:
           context:
             - fcichajna
 jobs:
+  pre-build:
+    working_directory: ~/fcichajna
+    docker: 
+      - image: cimg/node:14.10.1 # the primary container, where your job's commands are run
+    steps:
+      - checkout:
+          path: ~/fcichajna/
+      - attach_workspace:
+          at: ~/fcichajna/
+
+      - restore_cache:
+          key: node-v2-{{ checksum "package.json" }}-{{ arch }}
+
+      - run: npm install
+
+      - save_cache:
+          key: node-v2-{{ checksum "package.json" }}-{{ arch }}
+          paths:
+            - node_modules
+
+      - persist_to_workspace:
+          root: ~/fcichajna
+          paths:
+            - node_modules
   build:
     working_directory: ~/fcichajna
     docker: 
       - image: cimg/node:14.10.1 # the primary container, where your job's commands are run
     steps:
       - run: echo Hello CirlceCI! $CIRCLE_WORKING_DIRECTORY
-      - run: dir
       - run: npm install
       - run: npm run build
       - run: node deploy.js
