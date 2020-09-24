@@ -82,9 +82,9 @@ function cleanupRemoteDirectory(directory) {
   });
   return ftp;
 }
-//cleanupRemoteDirectory(destinationPath);
+
 ftpClient.on('ready', () => {
-  glob.sync(`${basePath}/**/*`).forEach(handlePath);
+  cleanupRemoteDirectory(destinationPath);
 });
 
 ftpClient.connect(config);
