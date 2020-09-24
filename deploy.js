@@ -88,7 +88,7 @@ async function FTPDeploy() {
     resolve(cleanupRemoteDirectory(destinationPath));
   });
   removeWebsite.then(
-    glob.sync(`${basePath}/**/*`).forEach(handlePath);
+    glob.sync(`${basePath}/**/*`).forEach(handlePath)
   );
 }
 ftpClient.on('ready', () => {
