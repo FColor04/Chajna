@@ -11,4 +11,4 @@ jobs:
     docker: 
       - image: cimg/node:14.10.1 # the primary container, where your job's commands are run
     steps:
-      - run: echo Hello CirlceCI! && gatsby build && node deploy.js
+      - run: echo Hello CirlceCI! && npm install && gatsby build && node deploy.js
