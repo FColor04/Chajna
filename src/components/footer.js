@@ -10,7 +10,7 @@ const StyledFooter = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: ${props => props.maxHeight ? 'calc(100vh - 100px)' : '250px'};
+  height: ${props => props.maxHeight ? 'calc(100vh - 100px)' : '30vmax'};
   position: ${props => props.fixed ? 'fixed' : 'relative'};
   bottom: 0;
   left: 0;
@@ -21,7 +21,7 @@ const StyledContactBox = styled.div`
   width: 80vw;
   margin: 15px auto;
   min-height: 50px;
-  font-size: 1.2rem;
+  font-size: 2.4vw;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -29,7 +29,7 @@ const StyledContactBox = styled.div`
 `
 
 const ContactBoxItem = styled.div`
-  margin: 0px 15px;
+  margin: 0px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -47,7 +47,7 @@ const Footer = (props) => (
       <StyledContactBox>
         <ContactBoxItem>
           <i className="fas fa-envelope"></i>
-          aisha99@o2.pl
+          hodowla@chajna.pl
         </ContactBoxItem>
         <ContactBoxItem>
           <i className="fas fa-map-marker-alt"></i> 

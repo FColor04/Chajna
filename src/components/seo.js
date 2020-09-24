@@ -68,7 +68,7 @@ function SEO({ description, lang, meta, title }) {
 SEO.defaultProps = {
   lang: `pl`,
   meta: [],
-  description: ``,
+  description: `Oficjalna strona hodowli psów Lhasa Apso`,
 }
 
 SEO.propTypes = {

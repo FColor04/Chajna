@@ -12,7 +12,7 @@ const GlobalStyle = createGlobalStyle`
       font-size: 20px;
     }
     ${({ theme }) => theme.media.watch} {
-      font-size: 14px;
+      font-size: 16px;
     }
   }
   body {
