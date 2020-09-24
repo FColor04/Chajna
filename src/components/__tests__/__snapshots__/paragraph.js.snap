@@ -3,5 +3,7 @@
 exports[`StyledParagraph renders correctly 1`] = `
 <div
   className="sc-bdnylx fHTwrT"
-/>
+>
+  Test Paragraph
+</div>
 `;
