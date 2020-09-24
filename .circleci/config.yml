@@ -10,7 +10,7 @@ jobs:
   pre-build:
     working_directory: ~/fcichajna
     docker: 
-      - image: cimg/node:14.10.1 # the primary container, where your job's commands are run
+      - image: cimg/node:12.18.3
     steps:
       - checkout:
           path: ~/fcichajna/
@@ -36,6 +36,7 @@ jobs:
     docker: 
       - image: cimg/node:14.10.1 # the primary container, where your job's commands are run
     steps:
+      - checkout
       - run: echo Hello CirlceCI! $CIRCLE_WORKING_DIRECTORY
       - run: npm install
       - run: npm run build
