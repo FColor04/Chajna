@@ -74,18 +74,25 @@ function cleanup(pathObject, directory) {
 }
 
 function cleanupRemoteDirectory(directory) {
-  return ftpClient.list(directory, (error, pathObjects) => {
+  let ftp = ftpClient.list(directory, (error, pathObjects) => {
     if (error) throw error;
 
     pathObjects.forEach(pathObject => cleanup(pathObject, directory));
     ftpClient.end();
   });
+  return ftp;
 }
 
-
+async function FTPDeploy() {
+  const removeWebsite = new Promise((resolve, reject) => {
+    resolve(cleanupRemoteDirectory(destinationPath));
+  });
+  removeWebsite.then(
+    glob.sync(`${basePath}/**/*`).forEach(handlePath);
+  );
+}
 ftpClient.on('ready', () => {
-  cleanupRemoteDirectory(destinationPath);
-  glob.sync(`${basePath}/**/*`).forEach(handlePath);
+  FTPDeploy();
 });
 
 ftpClient.connect(config);
