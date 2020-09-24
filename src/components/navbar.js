@@ -12,37 +12,50 @@ const StyledNavbar = styled.div`
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4);
 `
 
-const StyledButton = styled(Link)`
+const NavbarButton = styled(Link)`
   background: ${({ theme }) => theme.colors.light};
   margin: 0px 0px;
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
+  flex-grow: 1;
+  text-decoration: none;
+  transition: transform 0.2s;
+  border-right: 4px solid ${({ theme }) => theme.colors.clear};
+  &:last-child {
+    border-right: none;
+  }
+  &:hover {
+    text-decoration: none;
+    & span {
+      transform: translateY(-10%);
+    }
+    color: ${({ theme }) => theme.colors.text};
+    & span::before {
+      transform: scaleX(1);
+    }
+  }
+`
+
+const ButtonText = styled.span`
   text-decoration: none;
   color: ${({ theme }) => theme.colors.text};
-  font-size: 1.1rem;
+  text-align: center;
+  text-shadow: rgba(0, 0, 0, 0.4) 2px 2px 2px;
   position: relative;
   transform: translateY(0);
   transition: transform 0.2s;
-  flex-grow: 1;
-  text-shadow: rgba(0, 0, 0, 0.4) 2px 2px 2px;
-  &:hover {
-    transform: translateY(-10%);
-    text-decoration: none;
-    color: ${({ theme }) => theme.colors.text};
-  }
+  line-height: 1;
+  font-size: 1.4rem;
   &::before {
     content: "";
     position: absolute;
-    bottom: 30%;
-    width: 40%;
+    bottom: 0px;
+    width: 120%;
+    left: -10%;
     border-bottom: 4px ${({ theme }) => theme.colors.highlight} solid;
     transform: scaleX(0);
-    transition: transform 0.4s;
-  }
-  &:hover::before {
-    transform: scaleX(1);
+    transition: transform 0.2s;
   }
 `
 
@@ -55,9 +68,9 @@ const Navbar = () => (
     }}
   >
     <StyledNavbar>
-      <StyledButton rel="canonical" to="/">Strona Główna</StyledButton>
-      <StyledButton to="/gallery">Galeria</StyledButton>
-      <StyledButton to="/contact">Kontakt</StyledButton>
+      <NavbarButton rel="canonical" to="/"><ButtonText>Strona Główna</ButtonText></NavbarButton>
+      <NavbarButton to="/gallery"><ButtonText>Galeria</ButtonText></NavbarButton>
+      <NavbarButton to="/contact"><ButtonText>Kontakt</ButtonText></NavbarButton>
     </StyledNavbar>
   </nav>
 )

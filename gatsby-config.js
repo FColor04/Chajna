@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `FCI Chajna`,
-    description: `Oficjalna strona hodowli psów`,
+    description: `Oficjalna strona hodowli psów Lhasa Apso`,
     author: `@FColor04`,
   },
   plugins: [

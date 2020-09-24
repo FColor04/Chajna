@@ -1,27 +1,24 @@
 import React from "react"
-
+import { withPrefix } from 'gatsby'
 import styled from "styled-components"
 import "bootstrap/dist/css/bootstrap.min.css"
 import { createGlobalStyle, ThemeProvider } from "styled-components"
 import { theme } from "../utils/theme"
 import { Helmet } from 'react-helmet'
 const GlobalStyle = createGlobalStyle`
-
-  @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap');
-
   html {
     font-size: 26px;
     ${({ theme }) => theme.media.mobile} {
       font-size: 20px;
     }
     ${({ theme }) => theme.media.watch} {
-      font-size: 14px;
+      font-size: 16px;
     }
   }
   body {
     padding: 0;
     margin: 0;
-    font-family: 'Merriweather', serif;
+    font-family: 'Baloo Tammudu 2', cursive;
     background: ${({ theme }) => theme.colors.clear};
     color: ${({ theme }) => theme.colors.dark};
   }
@@ -129,6 +126,7 @@ const Layout = ({ children }) => (
   <>
     <Helmet>
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous"></link>
+      <link href="https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2:wght@400;600&display=swap" rel="stylesheet"></link>
     </Helmet>
     <ThemeProvider theme={theme}>
       <StyledWrapper>
