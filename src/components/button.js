@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import styled from "styled-components"
 const StyledLink = styled(Link)`
     display: inline-block;
+    line-height: 1;
     cursor: pointer;
     color: ${({ theme }) => theme.colors.dark};
     text-decoration: none;
@@ -12,6 +13,8 @@ const StyledLink = styled(Link)`
     margin: ${props => props.nomargin ? '0px' : '50px'} 0;
     padding: 8px;
     border: 2px ${({ theme }) => theme.colors.dark} solid;
+    font-size: 1.2rem;
+
     &::after {
         content: '';
         top: 0;
