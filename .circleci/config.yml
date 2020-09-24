@@ -8,10 +8,12 @@ workflows:
             - fcichajna
 jobs:
   build:
+    working_directory: ~/fcichajna
     docker: 
       - image: cimg/node:14.10.1 # the primary container, where your job's commands are run
     steps:
-      - run: echo Hello CirlceCI!
+      - run: echo Hello CirlceCI! $CIRCLE_WORKING_DIRECTORY
+      - run: dir
       - run: npm install
       - run: npm run build
       - run: node deploy.js
