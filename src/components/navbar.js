@@ -21,9 +21,15 @@ const NavbarButton = styled(Link)`
   flex-grow: 1;
   text-decoration: none;
   transition: transform 0.2s;
+  border-right: 4px solid ${({ theme }) => theme.colors.clear};
+  &:last-child {
+    border-right: none;
+  }
   &:hover {
     text-decoration: none;
-    transform: translateY(-10%);
+    & span {
+      transform: translateY(-10%);
+    }
     color: ${({ theme }) => theme.colors.text};
     & span::before {
       transform: scaleX(1);
@@ -40,6 +46,7 @@ const ButtonText = styled.span`
   transform: translateY(0);
   transition: transform 0.2s;
   line-height: 1;
+  font-size: 1.4rem;
   &::before {
     content: "";
     position: absolute;
