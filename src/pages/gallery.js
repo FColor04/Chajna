@@ -9,7 +9,6 @@ const Gallery = () => (
     <Layout>
     <SEO title="Galeria" />
     <Navbar />
-    <h1 className="underlined">Galeria zdjęć</h1><br />
     <ImagesGallery />
     <Footer/>
     </Layout>
