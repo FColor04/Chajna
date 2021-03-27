@@ -1,18 +1,18 @@
 import React from "react"
-import { withPrefix } from 'gatsby'
+import { withPrefix } from "gatsby"
 import styled from "styled-components"
 import "bootstrap/dist/css/bootstrap.min.css"
 import { createGlobalStyle, ThemeProvider } from "styled-components"
 import { theme } from "../utils/theme"
-import { Helmet } from 'react-helmet'
+import { Helmet } from "react-helmet"
 const GlobalStyle = createGlobalStyle`
   html {
-    font-size: 26px;
+    font-size: 20px;
     ${({ theme }) => theme.media.mobile} {
-      font-size: 20px;
+      font-size: 17px;
     }
     ${({ theme }) => theme.media.watch} {
-      font-size: 16px;
+      font-size: 15px;
     }
   }
   body {
@@ -76,7 +76,7 @@ const GlobalStyle = createGlobalStyle`
     position: absolute;
     right: 0;
     bottom: 0;
-    width: 100vw;
+    width: 100%;
     color: white;
     z-index: -1;
     opacity: 0.4;
@@ -99,7 +99,7 @@ const GlobalStyle = createGlobalStyle`
     font-size: 1.3rem;
   }
   .textAlignRight {
-    text-align: right;
+    text-align: right !Important;
   }
   .indented {
     text-indent: 20px;
@@ -125,8 +125,16 @@ const Content = styled.div`
 const Layout = ({ children }) => (
   <>
     <Helmet>
-      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous"></link>
-      <link href="https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2:wght@400;600&display=swap" rel="stylesheet"></link>
+      <link
+        rel="stylesheet"
+        href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+        integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc"
+        crossorigin="anonymous"
+      ></link>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2:wght@400;600&display=swap"
+        rel="stylesheet"
+      ></link>
     </Helmet>
     <ThemeProvider theme={theme}>
       <StyledWrapper>

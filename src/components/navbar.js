@@ -43,10 +43,10 @@ const ButtonText = styled.span`
   text-align: center;
   text-shadow: rgba(0, 0, 0, 0.4) 2px 2px 2px;
   position: relative;
-  transform: translateY(0);
+  transform: translateY(10px);
   transition: transform 0.2s;
   line-height: 1;
-  font-size: 1.4rem;
+  font-size: 2.4rem;
   &::before {
     content: "";
     position: absolute;
@@ -68,9 +68,15 @@ const Navbar = () => (
     }}
   >
     <StyledNavbar>
-      <NavbarButton rel="canonical" to="/"><ButtonText>Strona Główna</ButtonText></NavbarButton>
-      <NavbarButton to="/gallery"><ButtonText>Galeria</ButtonText></NavbarButton>
-      <NavbarButton to="/contact"><ButtonText>Kontakt</ButtonText></NavbarButton>
+      <NavbarButton rel="canonical" to="/">
+        <ButtonText>Strona Główna</ButtonText>
+      </NavbarButton>
+      <NavbarButton to="/gallery">
+        <ButtonText>Galeria</ButtonText>
+      </NavbarButton>
+      <NavbarButton to="/contact">
+        <ButtonText>Kontakt</ButtonText>
+      </NavbarButton>
     </StyledNavbar>
   </nav>
 )
