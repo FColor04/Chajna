@@ -143,12 +143,96 @@ const ImagesGallery = () => {
           }
         }
       }
+      r2021pies5: file(relativePath: { eq: "2021/maj/1.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 1920) {
+            ...GatsbyImageSharpFluid_noBase64
+          }
+        }
+      }
+      r2021pies6: file(relativePath: { eq: "2021/maj/2.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 1920) {
+            ...GatsbyImageSharpFluid_noBase64
+          }
+        }
+      }
+      r2021pies7: file(relativePath: { eq: "2021/maj/3.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 1920) {
+            ...GatsbyImageSharpFluid_noBase64
+          }
+        }
+      }
+      r2021pies8: file(relativePath: { eq: "2021/maj/4.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 1920) {
+            ...GatsbyImageSharpFluid_noBase64
+          }
+        }
+      }
+      r2021pies9: file(relativePath: { eq: "2021/maj/5.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 1920) {
+            ...GatsbyImageSharpFluid_noBase64
+          }
+        }
+      }
+      r2021pies10: file(relativePath: { eq: "2021/maj/6.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 1920) {
+            ...GatsbyImageSharpFluid_noBase64
+          }
+        }
+      }
+      r2021pies11: file(relativePath: { eq: "2021/maj/7.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 1920) {
+            ...GatsbyImageSharpFluid_noBase64
+          }
+        }
+      }
+      r2021pies12: file(relativePath: { eq: "2021/maj/8.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 1920) {
+            ...GatsbyImageSharpFluid_noBase64
+          }
+        }
+      }
+      r2021pies13: file(relativePath: { eq: "2021/maj/9.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 1920) {
+            ...GatsbyImageSharpFluid_noBase64
+          }
+        }
+      }
+      r2021pies14: file(relativePath: { eq: "2021/maj/10.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 1920) {
+            ...GatsbyImageSharpFluid_noBase64
+          }
+        }
+      }
     }
   `)
   return (
     <GalleryWrapper>
       <GallerySection>
         <h2>Miot 2021</h2>
+        <h3>Maj</h3>
+        <FlexWrapper>
+          <LinkedImg fluid={data.r2021pies5.childImageSharp.fluid} />
+          <LinkedImg fluid={data.r2021pies6.childImageSharp.fluid} />
+          <LinkedImg fluid={data.r2021pies7.childImageSharp.fluid} />
+          <LinkedImg fluid={data.r2021pies8.childImageSharp.fluid} />
+          <LinkedImg fluid={data.r2021pies9.childImageSharp.fluid} />
+          <LinkedImg fluid={data.r2021pies10.childImageSharp.fluid} />
+          <LinkedImg fluid={data.r2021pies11.childImageSharp.fluid} />
+          <LinkedImg fluid={data.r2021pies12.childImageSharp.fluid} />
+          <LinkedImg fluid={data.r2021pies13.childImageSharp.fluid} />
+          <LinkedImg fluid={data.r2021pies14.childImageSharp.fluid} />
+        </FlexWrapper>
+        <h3>Marzec</h3>
         <FlexWrapper>
           <LinkedImg fluid={data.r2021pies1.childImageSharp.fluid} />
           <LinkedImg fluid={data.r2021pies2.childImageSharp.fluid} />

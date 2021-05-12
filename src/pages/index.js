@@ -87,14 +87,13 @@ const IndexPage = () => {
                 fadeIn
                 fluid={data.nowymiot.childImageSharp.fluid}
               />
-              <h2 className="underlined">Witamy nowy miot w roku 2021 !</h2>
+              <h2 className="underlined">Witamy nowy miot w roku 2021!</h2>
               <br />
               <span className="indented">
                 W tym roku mamy przyjemność powitać nowe szczeniaczki w naszej
                 hodowli! Są niesamowicie miłe i przyjazne, urodzone zostały 26
-                marca, do odbioru będą 20 maja, po tym czasie serdecznie
-                zapraszamy do kontaktu, spodziewamy się również kolejnego miotu
-                w tym roku, około 31 marca!
+                marca, do odbioru będą od 20 maja, po tym czasie serdecznie
+                zapraszamy do kontaktu!
               </span>
               <br />
               <Button to="/gallery">Zobacz więcej &rarr;</Button>
