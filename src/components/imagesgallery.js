@@ -232,7 +232,7 @@ const ImagesGallery = () => {
           <LinkedImg fluid={data.r2021pies13.childImageSharp.fluid} />
           <LinkedImg fluid={data.r2021pies14.childImageSharp.fluid} />
         </FlexWrapper>
-        <h3>Kwiecień</h3>
+        <h3>Marzec</h3>
         <FlexWrapper>
           <LinkedImg fluid={data.r2021pies1.childImageSharp.fluid} />
           <LinkedImg fluid={data.r2021pies2.childImageSharp.fluid} />
