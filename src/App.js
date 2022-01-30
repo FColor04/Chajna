@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 
 import styled from "styled-components";
@@ -32,15 +31,15 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-          <Header></Header>
+          <Header/>
           <Main>
               <Routes>
-                  <Route path={"/"} element={<Homepage></Homepage>}></Route>
-                  <Route path={"/gallery"} element={<Gallery></Gallery>}></Route>
-                  <Route path={"/contact"} element={<Contact></Contact>}></Route>
+                  <Route path={"/"} element={<Homepage/>}/>
+                  <Route path={"/gallery"} element={<Gallery/>}/>
+                  <Route path={"/contact"} element={<Contact/>}/>
               </Routes>
           </Main>
-          <Footer></Footer>
+          <Footer/>
       </BrowserRouter>
     </div>
   );
