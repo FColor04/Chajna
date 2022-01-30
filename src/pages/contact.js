@@ -26,8 +26,9 @@ const Contact = () => {
                 <StyledMap>
                     <div>
                         <iframe width="600" height="500"
-                                src="https://maps.google.com/maps?q=Rybnik&t=&z=11&ie=UTF8&iwloc=&output=embed"
-                                frameBorder="4" scrolling="no" marginHeight="0" marginWidth="0"></iframe>
+                                title="Rybnik"
+    src="https://maps.google.com/maps?q=Rybnik&t=&z=11&ie=UTF8&iwloc=&output=embed"
+    frameBorder="4" scrolling="no" marginHeight="0" marginWidth="0"/>
                     </div>
                 </StyledMap>
             </Article>

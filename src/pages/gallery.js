@@ -22,17 +22,19 @@ const Display = styled.div`
 `;
 
 const Gallery = () => {
+
     function importAll(r) {
         let images = {};
-        r.keys().map((item, index) => { images[item.replace('./', '')] = r(item); });
+        // eslint-disable-next-line array-callback-return
+        r.keys().map((item) => { images[item.replace('./', '')] = r(item); });
         return images;
     }
 
     const images = importAll(require.context('/public/images', true, /\.(png|jpe?g|svg)$/));
     let allImages = [];
     let i = 0;
-    for(const [key, value] of Object.entries(images)) {
-        allImages[i] = <a key={"img"+i} href={value}><img src={value} ></img></a>;
+    for(const [, value] of Object.entries(images)) {
+        allImages[i] = <a href={value}><img src={value} alt={value}/></a>;
         i++;
     }
 
