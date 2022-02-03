@@ -2,6 +2,7 @@ import {NavLink} from "react-router-dom";
 import styled from "styled-components";
 
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faHome, faThLarge, faPhone} from "@fortawesome/free-solid-svg-icons";
 
 const StyledHeader = styled.header`
   display: flex;
@@ -60,14 +61,18 @@ const Header = () => {
                 </li>
                 <li>
                     <NavLink to={"/"}>
-                        Strona główna <FontAwesomeIcon icon={["fas", "home"]}/>
+                        Strona główna <FontAwesomeIcon icon={faHome} />
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to={"/gallery"}>Galeria</NavLink>
+                    <NavLink to={"/gallery"}>
+                        Galeria <FontAwesomeIcon icon={faThLarge} />
+                    </NavLink>
                 </li>
                 <li>
-                    <NavLink to={"/contact"}>Kontakt</NavLink>
+                    <NavLink to={"/contact"}>
+                        Kontakt <FontAwesomeIcon icon={faPhone} />
+                    </NavLink>
                 </li>
             </ul>
         </StyledHeader>
